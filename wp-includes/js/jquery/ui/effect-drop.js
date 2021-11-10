@@ -1,68 +1,61 @@
 /*!
  * jQuery UI Effects Drop 1.12.1
- * http://jqueryui.com
+ * https://jqueryui.com
  *
  * Copyright jQuery Foundation and other contributors
  * Released under the MIT license.
- * http://jquery.org/license
+ * https://jquery.org/license
  */
 
 //>>label: Drop Effect
 //>>group: Effects
 //>>description: Moves an element in one direction and hides it at the same time.
-//>>docs: http://api.jqueryui.com/drop-effect/
-//>>demos: http://jqueryui.com/effect/
+//>>docs: https://api.jqueryui.com/drop-effect/
+//>>demos: https://jqueryui.com/effect/
 
-( function( factory ) {
-	if ( typeof define === "function" && define.amd ) {
+(function (factory) {
+  if (typeof define === "function" && define.amd) {
+    // AMD. Register as an anonymous module.
+    define(["jquery", "./effect"], factory);
+  } else {
+    // Browser globals
+    factory(jQuery);
+  }
+})(function ($) {
+  return $.effects.define("drop", "hide", function (options, done) {
+    var distance,
+      element = $(this),
+      mode = options.mode,
+      show = mode === "show",
+      direction = options.direction || "left",
+      ref = direction === "up" || direction === "down" ? "top" : "left",
+      motion = direction === "up" || direction === "left" ? "-=" : "+=",
+      oppositeMotion = motion === "+=" ? "-=" : "+=",
+      animation = {
+        opacity: 0,
+      };
 
-		// AMD. Register as an anonymous module.
-		define( [
-			"jquery",
-			"./effect"
-		], factory );
-	} else {
+    $.effects.createPlaceholder(element);
 
-		// Browser globals
-		factory( jQuery );
-	}
-}( function( $ ) {
+    distance =
+      options.distance ||
+      element[ref === "top" ? "outerHeight" : "outerWidth"](true) / 2;
 
-return $.effects.define( "drop", "hide", function( options, done ) {
+    animation[ref] = motion + distance;
 
-	var distance,
-		element = $( this ),
-		mode = options.mode,
-		show = mode === "show",
-		direction = options.direction || "left",
-		ref = ( direction === "up" || direction === "down" ) ? "top" : "left",
-		motion = ( direction === "up" || direction === "left" ) ? "-=" : "+=",
-		oppositeMotion = ( motion === "+=" ) ? "-=" : "+=",
-		animation = {
-			opacity: 0
-		};
+    if (show) {
+      element.css(animation);
 
-	$.effects.createPlaceholder( element );
+      animation[ref] = oppositeMotion + distance;
+      animation.opacity = 1;
+    }
 
-	distance = options.distance ||
-		element[ ref === "top" ? "outerHeight" : "outerWidth" ]( true ) / 2;
-
-	animation[ ref ] = motion + distance;
-
-	if ( show ) {
-		element.css( animation );
-
-		animation[ ref ] = oppositeMotion + distance;
-		animation.opacity = 1;
-	}
-
-	// Animate
-	element.animate( animation, {
-		queue: false,
-		duration: options.duration,
-		easing: options.easing,
-		complete: done
-	} );
-} );
-
-} ) );
+    // Animate
+    element.animate(animation, {
+      queue: false,
+      duration: options.duration,
+      easing: options.easing,
+      complete: done,
+    });
+  });
+});

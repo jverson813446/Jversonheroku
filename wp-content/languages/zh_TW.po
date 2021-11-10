@@ -15387,8 +15387,8 @@ msgid "General"
 msgstr "一般"
 
 #: wp-includes/class-wp-editor.php:1265
-msgid "The URL you entered seems to be an external link. Do you want to add the required http:// prefix?"
-msgstr "系統判斷目前輸入的網址是外部連結。要為它加上必要的 http:// 前置詞嗎？"
+msgid "The URL you entered seems to be an external link. Do you want to add the required https:// prefix?"
+msgstr "系統判斷目前輸入的網址是外部連結。要為它加上必要的 https:// 前置詞嗎？"
 
 #: wp-includes/class-wp-editor.php:1263
 msgid "The URL you entered seems to be an email address. Do you want to add the required mailto: prefix?"

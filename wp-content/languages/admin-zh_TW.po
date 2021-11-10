@@ -8724,7 +8724,7 @@ msgid "Plugins extend and expand the functionality of WordPress. You may automat
 msgstr "外掛可以擴充及增強 WordPress 的功能。網站管理員可以在 <a href=\"%s\" target=\"_blank\">WordPress 外掛目錄</a>中進行自動安裝，或點擊這個頁面頂端的 [上傳外掛] 按鈕上傳 ZIP 格式的外掛檔案進行安裝。"
 
 #. Plugin URI of the plugin
-msgid "http://wordpress.org/plugins/hello-dolly/"
+msgid "https://wordpress.org/plugins/hello-dolly/"
 msgstr "https://tw.wordpress.org/plugins/hello-dolly/"
 
 #: wp-admin/includes/class-theme-upgrader.php:80
@@ -9640,7 +9640,7 @@ msgid "Add new Comment"
 msgstr "新增留言"
 
 #. Author URI of the plugin
-msgid "http://ma.tt/"
+msgid "https://ma.tt/"
 msgstr "https://ma.tt/"
 
 #. Description of the plugin
@@ -14873,7 +14873,7 @@ msgstr "游標暫留於友站連結的連結時會顯示說明內容，或因為
 
 #: wp-admin/edit-link-form.php:125
 msgid "Example: <code>https://wordpress.org/</code> &#8212; don&#8217;t forget the <code>https://</code>"
-msgstr "範例: <code>https://tw.wordpress.org/</code> &#8212; 輸入網址時請記得包含 <code>http://</code> 或 <code>https://</code>"
+msgstr "範例: <code>https://tw.wordpress.org/</code> &#8212; 輸入網址時請記得包含 <code>https://</code> 或 <code>https://</code>"
 
 #: wp-admin/edit-link-form.php:122
 msgid "Web Address"
